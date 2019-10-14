@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Burcu Esmersoy</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css\styleVale.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="border">
+    <div class="logo"><img src="/img/imgVale/logo.png" alt="" /></div>
+    <div class="bg web"><img src="img/imgVale/bg.jpg" alt="" /></div>
+    <div class="bg onlytablet"><img src="img/imgVale/bg1.jpg" alt="" /></div>
+    <div class="bg onlytablet1"><img src="img/imgVale/bg2.jpg" alt="" /></div>
+    <div class="bg mobile"><img src="img/imgVale/bg3.jpg" alt="" /></div>
+
+    <div id="txt1" class="text1">EMAAR'DA</div>
+    <div id="txt2" class="text2">BİR ALIRSIN, İKİ ALIRSIN</div>
+    <div id="txt3" class="text3">ÜÇÜNCÜDE DE</div>
+    <div id="txt4" class="text4">KAZANIRSIN!</div>
+    <div id="txt5" class="text5">18-21 Ekim'de Emaar'da yapacağın 3 alışverişte, birinin tutarı kadar TL yüklü Param Kart hediye!</div>
+
+    <div id="tsk1" style="display: none" class="desc">Kullanım koşulları:
+      <br>
+      Ücretsiz vale kullanımı 18 – 21 Ekim 2019 tarihleri arasında geçerlidir.
+      <br>
+      Size özel kodu Emaar 2. Ve 5. kapıda yer alan BOB VALE personeline göstermeniz gerekmektedir.
+      <br>
+      Ücretsiz vale sadece Turkcellilere özel ve stokla sınırlıdır.
+      <br>
+      Emaar, kampanya koşullarında değişiklik yapma hakkını her koşulda saklı tutar.
+    </div>
+
+        <div class="text1" id="tesekkur" style="display: none;">İlginize teşekkürler. Etkinlik için rezervasyonumuz dolmuştur. <br>Bir sonraki etkinlikte görüşmek üzere.</div>
+        <div class="kupon"  style="display: none;" id="divKuponNo"><span id="kuponNo"></span></div>
+        <div class="form" id="formburcu">
+            <form>
+              <input type="text" placeholder="Adınız" class="name" id="ad" required/>
+              <input type="text" placeholder="Soyadınız" class="surname" id="soyad" required/>
+              <input type="text" placeholder="Telefon Numaranız" class="number" id="telefon" required/>
+              <input type="text" placeholder="Yaşınız" class="gender" id="yas" required/>
+                <select id="cinsiyet" required>
+                    <option value="volvo">Cinsiyetiniz</option>
+                    <option value="male">Erkek</option>
+                    <option value="female">Kadın</option>
+                </select>
+                <input type="text" placeholder="Email Adresiniz" class="mail" id="email" required/>
+                <div class="kvkk">
+                    <label>
+                        <input type="checkbox" name="kvkk" value="kvkk" id="kvkk">
+                        <i>Kaydol düğmesine tıklayarak, Koşullarımızı, Veri İlkemizi ve Çerezler İlkemizi kabul etmiş olursun. Bizden SMS ve e-posta Bildirimleri alabilir ve bu bildirimleri istediğin zaman durdurabilirsin.</i>
+                    </label>
+                </div>
+               
+                <div class="btn"><input type="button" value="Gönder" id="btn" /></div>
+                <div class="clear"></div>
+            </form>
+        </div>
+    </div>
+
+  <script>
+  $(document).ready(function(){
+
+    
+    
+    $.get("/app/kuponMusteri", function(m){
+      console.log(m.length)
+  if(m.length>=1000)
+  {
+    $('#bulusma').css("display", "none");
+    $('#tesekkur').css("display", "css");
+    $('#formburcu').css("display", "none");
+  }
+ 
+
+    $('#btn').on("click", function(){
+      var cinsiyet = $('#cinsiyet').find(":selected").val();
+      var kvkk;
+    if($('#kvkk').is(':checked')){
+      kvkk = true;
+    }
+    else{
+      kvkk = false
+    }
+var ad =      $('#ad').val();
+var soyad =      $('#soyad').val();
+var telefon = $('#telefon').val();
+var yas = $('#yas').val();
+var email =   $('#email').val();
+
+$.get("/app/kuponlar", function(kuponlar){
+    var kupon = kuponlar.filter(k => k.used === false);
+    
+    var currentkupon = kupon[Math.floor(Math.random()*kupon.length)]
+
+var checkTel = m.find(m => m.telefon === telefon);
+
+
+if(ad != null && telefon!=null && yas!=null && email!=null && cinsiyet != "volvo" && kvkk!=false && checkTel==null){
+  
+
+//   $.ajax({
+//             url: "/app/formVale",
+//             type: "POST",
+//             data: {
+//                 ad:      ad,
+//                 soyad: soyad,
+//                 cinsiyet:   cinsiyet,
+//                 telefon: telefon,
+//                 yas:   yas,
+//                 email:   email,
+//                 kvkk: kvkk
+//             },
+//             async: false
+//         })
+  $.ajax({
+            url: "/app/vale",
+            type: "POST",
+            data: {
+                ad:      ad,
+                soyad: soyad,
+                cinsiyet:   cinsiyet,
+                telefon: telefon,
+                yas:   yas,
+                email:   email,
+                kvkk: kvkk
+            },
+            
+        })
+
+        
+
+      $.get("/app/kuponMusteri", function(kpnMust){
+        var currentMusteri = kpnMust.find(k => k.telefon === telefon);
+        console.log(currentMusteri);
+        $.ajax({
+            url: "/app/valeKupon",
+            type: 'POST',
+            data: {
+                kuponId: currentkupon._id,
+                musteriId: currentMusteri._id
+            },
+            success: function(){
+
+              $('#bulusma').css("display", "none");
+              $('#tesekkur').css("display", "none");
+              $('#formburcu').css("display", "none");
+              $('#tsk1').css("display", "block");
+              $('#divKuponNo').css("display", "block");
+              console.log(Object.keys(currentkupon));
+              var vrbl = Object.keys(currentkupon)
+              $('#kuponNo').text(currentkupon['ICL-EIM-SPV']);
+                
+            },
+            
+        })
+      })
+
+       
+
+}
+
+else{
+  if(checkTel!=null)
+  {
+   
+    var a = confirm("Bu telefon numarasıyla daha önce bir kayıt yapılmış.");
+  }
+ else if(kvkk==false){
+    var a = confirm("Kaydınızın tamamlanabilmesi için KVKK kutucuğunu onaylamanız gerekmektedir");
+  }
+  else{
+    var a = confirm("Formdaki tüm alanları eksiksiz ve doğru bir biçimde doldurmanız gerekmektedir.");
+  }
+  
+}
+
+   
+})
+  
+})
+
+
+       var seri = $('#frm').serialize();
+     
+    })
+
+  })
+  </script>
+
+</body>
+</html>

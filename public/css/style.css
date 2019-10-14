@@ -336,6 +336,16 @@ input[type=button] {
         font-size: 1.5vw;
         padding: 20px 0 0;
     }
+    .desc2 {
+        top: 870px;
+        right: 50%;
+        font-size: 5vw;
+        left: 50%;
+        width: 98%;
+        margin: 0 0 0 -49%;
+        padding: 50px 0;
+        background: #e6beb1;
+    }
 }
 
 @media screen and (max-width:768px) {
@@ -428,6 +438,7 @@ input[type=button] {
         margin: 0 0 0 -49%;
         box-sizing: border-box;
     }
+    
 }
 
 @media screen and (max-width:375px) {
@@ -436,6 +447,16 @@ input[type=button] {
 
     .form {
         bottom: 170px;
+    }
+    .desc2 {
+
+        top: 540px;
+        right: 50%;
+        font-size: 8vw;
+        width: 98%;
+        left: 50%;
+        margin: 0 0 0 -49%;
+        box-sizing: border-box;
     }
 
 

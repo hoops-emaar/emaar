@@ -181,7 +181,7 @@ select option {
 }
 
 .kvkk {
-    width: 50%;
+    width: 48%;
     float: left;
     font-size: 13px;
     color: #333;
@@ -191,7 +191,7 @@ select option {
 
 .btn {
     float: right;
-    width: 45%;
+    width: 48%;
 }
 
 input[type=button] {

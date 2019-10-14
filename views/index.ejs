@@ -27,6 +27,7 @@
         </div>
         <div class="info"><img src="/img/date.png" alt="" /> <img src="/img/loca.jpg" alt="" /></div>
         <div class="text1" id="tesekkur" style="display: none;">İlginize teşekkürler. Etkinlik için rezerasyonumuz dolmuştur. <br>Bir sonraki etkinlikte görüşmek üzere.</div>
+        <div class="text1" id="tesekkur2" style="display: none;">Kaydınız alınmıştır, teşekkür ederiz</div>
         <div class="form" id="formburcu">
             <form>
                 <input type="text" placeholder="Adınız" class="name" id="ad" required/>
@@ -117,7 +118,7 @@ if(ad != null && telefon!=null && yas!=null && email!=null && cinsiyet != "volvo
             },
             success: function(){
               $('#bulusma').css("display", "none");
-              $('#tesekkur').css("display", "none");
+              $('#tesekkur2').css("display", "block");
               $('#formburcu').css("display", "none");
             }
             

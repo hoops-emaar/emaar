@@ -182,6 +182,14 @@ input[type=button] {
     display: none;
 }
 
+.desc2 {position: absolute;
+    top: 210px;
+    right: 11%;
+    color: #000;
+    text-align: center;
+    font-size: 3vw;
+    width: auto;}
+
 
 
 
@@ -380,6 +388,7 @@ input[type=button] {
     }
 
     .form input.name,
+    .form input.surname,
     .form input.number,
     .form input.gender,
     .form input.mail,
@@ -390,7 +399,7 @@ input[type=button] {
     }
 
     .form {
-        bottom: 143px;
+        bottom: -150px;
     }
 
     .kvkk {
@@ -408,6 +417,16 @@ input[type=button] {
         position: absolute;
         bottom: -26px;
         left: 0;
+    }
+    .desc2 {
+
+        top: 810px;
+        right: 50%;
+        font-size: 8vw;
+        width: 98%;
+        left: 50%;
+        margin: 0 0 0 -49%;
+        box-sizing: border-box;
     }
 }
 

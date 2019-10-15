@@ -23,7 +23,7 @@ app.get("/", async (req, res) => {
     res.render('index.ejs');
 })
 
-app.get("/vale", async (req, res) => {
+app.get("/turkcell-vale", async (req, res) => {
     res.render('kupon.ejs');
 })
 app.get("/burcu-esmersoy", async (req, res) => {

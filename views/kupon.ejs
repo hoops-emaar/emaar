@@ -86,7 +86,8 @@
     </script>
   <script>
   $(document).ready(function(){
-
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
     
     
     $.get("/app/kuponMusteri", function(m){
@@ -114,8 +115,14 @@ var telefon = $('#telefon').val();
 var yas = $('#yas').val();
 var email =   $('#email').val();
 
+if(telefon.length == 11 && telefon[0]=="0"){
+  telefon = telefon.substring(1);
+}
+
 $.get("/app/kuponlar", function(kuponlar){
-    var kupon = kuponlar.filter(k => k.used === false);
+    
+  var kupon = kuponlar.filter(k => k.used === false);
+    console.log(kupon);
     
     var currentkupon = kupon[Math.floor(Math.random()*kupon.length)]
 
@@ -190,6 +197,8 @@ if(ad != null && telefon!=null && yas!=null && email!=null && cinsiyet != "volvo
             
         })
       })
+
+
 
        
 

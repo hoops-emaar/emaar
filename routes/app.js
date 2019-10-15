@@ -47,30 +47,14 @@ request.post({
   console.log(response);
   console.log(body);
   console.log(ekurl)
+  res.send(error);
 })
 
-//     $.ajax({
-//   url:  "https://api.emaar.com.tr/ext/customers/save",
-//   header: 'Authorization: Bearer BEARER_TOKEN',
-//   header: 'Content-Type: application/json',
-//   data: {
-// 	"customer_phone": req.body.telefon,
-// 	"customer_name": req.body.ad,
-// 	"customer_surname": req.body.soyad,
-//     "customer_province": req.body.adres,
-//     "customer_email": req.body.email,
-// 	"customer_accepts_kvkk": true,
-	
-// },
-// success: function(){
-//     console.log(res);
-// }
-//     });
-return res.send("success or failure");
 })
 
 router.post("/formVale", async (req, res) => {
   var tel = "90" + req.body.telefon;
+  
   
   console.log('&customer_name=' + req.body.ad + '&customer_surname=' + req.body.soyad + '&customer_gender=' + req.body.cinsiyet + '&customer_email=' + req.body.email + '&customer_accepts_kvkk=true')
       var ekurl = 'customer_name=' + req.body.ad + '&customer_phone=%2B' + tel +  '&customer_surname=' + req.body.soyad + '&customer_gender=' + req.body.cinsiyet + '&customer_email=' + req.body.email + '&customer_accepts_kvkk=' + true + '&event_id=5da05a90b802505e10ab99b2' + '&customer_allows_sms='+true + 'customer_allows_email=' + true
@@ -104,26 +88,11 @@ router.post("/formVale", async (req, res) => {
     console.log(response);
     console.log(body);
     console.log(ekurl)
+    return res.send(error);
+
   })
   
-  //     $.ajax({
-  //   url:  "https://api.emaar.com.tr/ext/customers/save",
-  //   header: 'Authorization: Bearer BEARER_TOKEN',
-  //   header: 'Content-Type: application/json',
-  //   data: {
-  // 	"customer_phone": req.body.telefon,
-  // 	"customer_name": req.body.ad,
-  // 	"customer_surname": req.body.soyad,
-  //     "customer_province": req.body.adres,
-  //     "customer_email": req.body.email,
-  // 	"customer_accepts_kvkk": true,
-    
-  // },
-  // success: function(){
-  //     console.log(res);
-  // }
-  //     });
-  return res.send("success or failure");
+  
   })
 
 router.get("/musteriler", async (req, res)=>{

@@ -481,7 +481,29 @@ input[type=button] {
        margin:0 0 10px;
     }
     .form {top:360px;}
-
+    .titlemobile {
+        display: block;
+        top: -40px;
+        right: 50%;
+        left: 50%;
+        width: 90%;
+        margin: 0 0 0 -45%;
+    }
+    .text1 {
+        top: 275px;
+        right: 0;
+        font-size: 7.4vw;
+        width: 100%;
+    }
+    .info {
+        top: 415px;
+        right: 0;
+        width: 100%;
+    }
+    .form {
+        bottom: 120px!important;
+        top: auto;
+    }
 
 }
 @media screen and (max-width:414px) {

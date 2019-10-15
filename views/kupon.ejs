@@ -23,9 +23,10 @@
     <div id="txt2" class="text2">BİR ALIRSIN, İKİ ALIRSIN</div>
     <div id="txt3" class="text3">ÜÇÜNCÜDE DE</div>
     <div id="txt4" class="text4">KAZANIRSIN!</div>
-    <div id="txt5" class="text5">18-21 Ekim'de Emaar'da yapacağın 3 alışverişte, birinin tutarı kadar TL yüklü Param Kart hediye!</div>
+    <div id="txt5" class="text5">18-21 ekim tarihlerinde Emaar'dan yapacağın 3 alışverişte birinin tutarı kadar TL yüklü Param Kart hediye!
+      Üstelik Turkcell'lilere özel ilgili tarihlerde ilk 1.000 kişiye VALE hizmeti ücretsizdir.</div>
 
-    <div id="tsk1" style="display: none" class="desc">Kullanım koşulları:
+    <div id="tsk1" style="display: none" class="desc">Turkcell Vale kullanım koşulları:
       <br>
       Ücretsiz vale kullanımı 18 – 21 Ekim 2019 tarihleri arasında geçerlidir.
       <br>
@@ -105,20 +106,20 @@ var checkTel = m.find(m => m.telefon === telefon);
 if(ad != null && telefon!=null && yas!=null && email!=null && cinsiyet != "volvo" && kvkk!=false && checkTel==null){
   
 
-  $.ajax({
-            url: "/app/formVale",
-            type: "POST",
-            data: {
-                ad:      ad,
-                soyad: soyad,
-                cinsiyet:   cinsiyet,
-                telefon: telefon,
-                yas:   yas,
-                email:   email,
-                kvkk: kvkk
-            },
-            async: false
-        })
+  // $.ajax({
+  //           url: "/app/formVale",
+  //           type: "POST",
+  //           data: {
+  //               ad:      ad,
+  //               soyad: soyad,
+  //               cinsiyet:   cinsiyet,
+  //               telefon: telefon,
+  //               yas:   yas,
+  //               email:   email,
+  //               kvkk: kvkk
+  //           },
+  //           async: false
+  //       })
   $.ajax({
             url: "/app/vale",
             type: "POST",
@@ -155,7 +156,7 @@ if(ad != null && telefon!=null && yas!=null && email!=null && cinsiyet != "volvo
               $('#divKuponNo').css("display", "block");
               console.log(Object.keys(currentkupon));
               var vrbl = Object.keys(currentkupon)
-              $('#kuponNo').text( "Kupon kodunuz:  "  + currentkupon['CodeName']);
+              $('#kuponNo').text( "Tebrikler! Ücretsiz vale kazandınız! Kupon kodunuz:  "  + currentkupon['CodeName']);
                 
             },
             

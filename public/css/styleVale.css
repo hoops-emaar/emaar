@@ -43,11 +43,11 @@ body {
 
 .text1 {
     position: absolute;
-    top: 240px;
+    top: 220px;
     left: 3%;
     color: #212120;
     text-align: center;
-    font-size: 3.2vw;
+    font-size: 3vw;
     width: auto;
     background-image: radial-gradient(#fdd850, #b48745);
     padding: 0 50px 0 20px;
@@ -56,11 +56,11 @@ body {
 
 .text2 {
     position: absolute;
-    top: 330px;
+    top: 305px;
     left: 3%;
     color: #212120;
     text-align: center;
-    font-size: 3.2vw;
+    font-size: 3vw;
     width: auto;
     background-image: radial-gradient(#fdd850, #b48745);
     padding: 0 50px 0 20px;
@@ -69,37 +69,37 @@ body {
 
 .text3 {
     position: absolute;
-    top: 420px;
+    top: 390px;
     left: 3%;
     color: #fff;
     text-align: center;
-    font-size: 4vw;
+    font-size: 3.5vw;
     width: auto;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.75);
     padding: 0 50px 0 20px;
 
 }
 
 .text4 {
     position: absolute;
-    top: 532px;
+    top: 487px;
     left: 3%;
     color: #fff;
     text-align: center;
-    font-size: 4vw;
+    font-size: 3.5vw;
     width: auto;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.75);
     padding: 0 50px 0 20px;
 }
 
 .text5 {
     position: absolute;
-    top: 650px;
+    top: 590px;
     left: 2%;
     color: #fff;
     text-align: left;
-    font-size: 1.5vw;
-    width: 770px;
+    font-size: 1.3vw;
+    width: 690px;
     padding: 0 50px 0 20px;
 }
 
@@ -275,8 +275,8 @@ input[type=button] {
     }
 
     .text5 {
-        top: 495px;
-        width: 515px;
+        top: 490px;
+        width: 645px;
     }
 
 
@@ -449,29 +449,34 @@ input[type=button] {
     }
 
     .text1 {
-        top: 300px;
+        top: 280px;
         font-size: 5vw;
     }
 
     .text2 {
-        top: 380px;
+        top: 360px;
         font-size: 5vw;
     }
 
     .text3 {
-        top: 460px;
+        top: 440px;
         font-size: 6vw;
     }
 
     .text4 {
-        top: 555px;
+        top: 535px;
         font-size: 6vw;
     }
 
     .text5 {
-        top: 670px;
-        font-size: 3vw;
-        width: 770px;
+        top: 640px;
+        font-size: 2.8vw;
+        width: 96%;
+        left:50%;
+        right:50%;
+        margin: 0 0 0 -48%;
+        text-align: center;
+        padding:0;
     }
 
     .form {
@@ -587,12 +592,17 @@ input[type=button] {
     .text5 {
         top: 660px;
         right: 50%;
-        font-size: 2vw;
-        width: 70%;
+        font-size: 2.6vw;
+        width: 90%;
         text-align: center;
         left: 50%;
-        margin: 0 0 0 -35%;
+        margin: 0 0 0 -45%;
         padding: 0;
+    }
+
+    .form input.gender,
+    .form input.mail, .form select {
+        margin: 10px 0 0;
     }
 
     .logo {
@@ -600,24 +610,16 @@ input[type=button] {
     }
 
 
-    .form input.name,
-    .form input.surname,
-    .form input.number,
-    .form input.gender,
-    .form input.mail,
-    .form select {
-        width: 100%;
-        float: none;
-        margin: 10px 0 0;
-    }
+
 
     .form {
-        bottom: 0;
+        bottom: 87px;
     }
 
     .kvkk {
         width: 100%;
-        float: none;
+        float: left;
+        margin:10px 0;
     }
 
     .btn {
@@ -654,6 +656,17 @@ input[type=button] {
 
 }
 
+@media screen and (max-width:767px) {
+    .form input[type=text],
+    .form select {
+       float:none;
+       width:100%;
+       margin:0 0 10px;
+    }
+    .form {top:360px;}
+
+
+}
 @media screen and (max-width:414px) {
 
     body {
@@ -685,7 +698,7 @@ input[type=button] {
 
 
     .form {
-        top: 430px;
+        top: 460px;
     }
     .kupon {
 

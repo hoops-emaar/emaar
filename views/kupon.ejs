@@ -176,6 +176,8 @@ if(ad != null && telefon!=null && yas!=null && email!=null && cinsiyet != "volvo
               console.log(Object.keys(currentkupon));
               var vrbl = Object.keys(currentkupon)
               $('#kuponNo').html( "<div>" + "Tebrikler! Ücretsiz vale kazandınız! " + "</div>" + " Kupon kodunuz: "  + currentkupon['CodeName']);
+              
+              gtag('config', 'UA-135623189-1');
               window.dataLayer.push({
               "event":"form_submission",
               "form_id": "currentMusteri._id",

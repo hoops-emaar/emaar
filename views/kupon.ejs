@@ -106,20 +106,20 @@ var checkTel = m.find(m => m.telefon === telefon);
 if(ad != null && telefon!=null && yas!=null && email!=null && cinsiyet != "volvo" && kvkk!=false && checkTel==null){
   
 
-  // $.ajax({
-  //           url: "/app/formVale",
-  //           type: "POST",
-  //           data: {
-  //               ad:      ad,
-  //               soyad: soyad,
-  //               cinsiyet:   cinsiyet,
-  //               telefon: telefon,
-  //               yas:   yas,
-  //               email:   email,
-  //               kvkk: kvkk
-  //           },
-  //           async: false
-  //       })
+  $.ajax({
+            url: "/app/formVale",
+            type: "POST",
+            data: {
+                ad:      ad,
+                soyad: soyad,
+                cinsiyet:   cinsiyet,
+                telefon: telefon,
+                yas:   yas,
+                email:   email,
+                kvkk: kvkk
+            },
+            async: false
+        })
   $.ajax({
             url: "/app/vale",
             type: "POST",

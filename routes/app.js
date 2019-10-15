@@ -88,7 +88,7 @@ router.post("/formVale", async (req, res) => {
     console.log(response);
     console.log(body);
     console.log(ekurl)
-    return res.send(error);
+    return res.send(response);
 
   })
   

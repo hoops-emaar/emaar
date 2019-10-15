@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css\styleVale.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js\google.js"></script>
+   
 </head>
 
 <body>
@@ -176,7 +176,7 @@ if(ad != null && telefon!=null && yas!=null && email!=null && cinsiyet != "volvo
               console.log(Object.keys(currentkupon));
               var vrbl = Object.keys(currentkupon)
               $('#kuponNo').html( "<div>" + "Tebrikler! Ücretsiz vale kazandınız! " + "</div>" + " Kupon kodunuz: "  + currentkupon['CodeName']);
-              
+
               gtag('config', 'UA-135623189-1');
               window.dataLayer.push({
               "event":"form_submission",

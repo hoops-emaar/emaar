@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TGVLVKS');</script>
+        <!-- End Google Tag Manager -->
+        
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Burcu Esmersoy</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css\style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js\google.js"></script>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TGVLVKS"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="border">
+        <div class="logo"><img src="/img/logo.png" alt="" /></div>
+        <div class="bg web"><img src="/img/bg.jpg" alt="" /></div>
+        <div class="bg onlytablet"><img src="/img/bg1.jpg" alt="" /></div>
+        <div class="bg onlytablet1"><img src="/img/bg2.jpg" alt="" /></div>
+        <div class="bg mobile"><img src="/img/bg3.jpg" alt="" /></div>
+        <div class="title"><img src="/img/title.png" alt="" /></div>
+        <div class="title titlemobile"><img src="/img/title1.png" alt="" /></div>
+        <div class="text1" id="bulusma">İŞ, AŞk, hayat: <br />Burcu Esmersoy’a anlat!
+            <span>Burcu Esmersoy, Emaar Ladies Night’ta kadınlarla buluşuyor,<br />
+                konuşulmadık konu bırakmıyor.
+            </span>
+        </div>
+        <div class="info"><img src="/img/date.png" alt="" /> <img src="/img/loca.jpg" alt="" /></div>
+        <div class="desc" id="tesekkur" style="display: none;" >İlginize teşekkürler. Etkinlik için rezerasyonumuz dolmuştur. <br>Bir sonraki etkinlikte görüşmek üzere.</div>
+        <div class="desc2" id="tesekkur2" style="display: none;">Rezervasyonunuz alınmıştır,<br/> teşekkür ederiz<span>Rezervasyonunuz tek kişiliktir.</span></div>
+
+        <div class="form" id="formburcu">
+            <form>
+                <input type="text" placeholder="Adınız" class="name" id="ad" required/>
+                <input type="text" placeholder="Soyadınız" class="surname" id="soyad" required/>
+                <input type="text" placeholder="Telefon Numaranız" class="number" id="telefon" required/>
+                <input type="text" placeholder="Yaşınız" class="gender" id="yas" required/>
+                
+                <input type="text" placeholder="Email Adresiniz" class="mail" id="email" required/>
+                <select id="cinsiyet" required>
+                  <option value="volvo">Cinsiyetiniz</option>
+                  <option value="male">Erkek</option>
+                  <option value="female">Kadın</option>
+              </select>
+                <div class="kvkk">
+                    <label>
+                        <input type="checkbox" name="kvkk" value="kvkk" id="kvkk">
+                        <i>Kaydol düğmesine tıklayarak, Koşullarımızı, <a href="https://www.emaarsquaremall.com/gizlilik-politikasi" target="_blank">Veri İlkemizi ve Çerezler İlkemizi</a> kabul etmiş olursun. Bizden SMS ve e-posta Bildirimleri alabilir ve bu bildirimleri istediğin zaman durdurabilirsin.</i>
+                    </label>
+                </div>
+               
+                <div class="btn"><input type="button" value="Gönder" id="btn" /></div>
+                <div class="clear"></div>
+            </form>
+        </div>
+    </div>
+    
+  <script>
+  $(document).ready(function(){
+    
+    $.get("/app/musteriler", function(m){
+      console.log(m.length)
+  if(m.length>=150)
+  {
+    $('#bulusma').css("display", "none");
+    $('#tesekkur').css("display", "block");
+    $('#formburcu').css("display", "none");
+  }
+ 
+
+    $('#btn').on("click", function(){
+      var cinsiyet = $('#cinsiyet').find(":selected").val();
+      var kvkk;
+    if($('#kvkk').is(':checked')){
+      kvkk = true;
+    }
+    else{
+      kvkk = false
+    }
+var ad =      $('#ad').val();
+var soyad =      $('#soyad').val();
+var telefon = $('#telefon').val();
+var yas = $('#yas').val();
+var email =   $('#email').val();
+
+console.log(ad)
+console.log(telefon)
+console.log(cinsiyet)
+console.log(yas)
+console.log(email)
+console.log(kvkk)
+var checkTel = m.find(m => m.telefon === telefon);
+if(ad != null && telefon!=null && yas!=null && email!=null && cinsiyet != "volvo" && kvkk!=false && checkTel==null){
+  
+
+  $.ajax({
+            url: "/app/form",
+            type: "POST",
+            data: {
+                ad:      ad,
+                soyad: soyad,
+                cinsiyet:   cinsiyet,
+                telefon: telefon,
+                yas:   yas,
+                email:   email,
+                kvkk: kvkk
+            },
+            
+        })
+  $.ajax({
+            url: "/app/musteriKaydet",
+            type: "POST",
+            data: {
+                ad:      ad,
+                soyad: soyad,
+                cinsiyet:   cinsiyet,
+                telefon: telefon,
+                yas:   yas,
+                email:   email,
+                kvkk: kvkk
+            },
+            success: function(){
+              $('#bulusma').css("display", "none");
+              $('#tesekkur2').css("display", "block");
+              $('#formburcu').css("display", "none");
+            }
+            
+        })
+
+}
+
+else{
+  if(checkTel!=null)
+  {
+    console.log(checkTel)
+    var a = confirm("Bu telefon numarasıyla daha önce bir kayıt yapılmış.");
+  }
+ else if(kvkk==false){
+    var a = confirm("Kaydınızın tamamlanabilmesi için KVKK kutucuğunu onaylamanız gerekmektedir");
+  }
+  else{
+    var a = confirm("Formdaki tüm alanları eksiksiz ve doğru bir biçimde doldurmanız gerekmektedir.");
+  }
+  
+}
+
+   
+  
+  
+})
+
+
+       var seri = $('#frm').serialize();
+     
+    })
+
+  })
+  </script>
+
+</body>
+</html>

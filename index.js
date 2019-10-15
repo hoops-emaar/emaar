@@ -26,5 +26,8 @@ app.get("/", async (req, res) => {
 app.get("/vale", async (req, res) => {
     res.render('kupon.ejs');
 })
+app.get("/burcu-esmersoy", async (req, res) => {
+    res.render('burcu.ejs');
+})
 
 app.listen(PORT, () => console.log("app listening on port" + PORT));

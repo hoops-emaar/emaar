@@ -220,15 +220,16 @@ input[type=button] {
 .kupon {
     display: block;
     position: absolute;
-    background: rgba(0,0,0, 0.6);
-    right: 3%;
+    background: rgba(0,0,0, 0.75);
+    right: 8%;
     bottom: 260px;
     color: #fff;
     font-size:2vw;
     text-align:center;
     padding:10px 20px;
+}
 
-}.desc {
+.desc {
     display: block;
     position: absolute;
     background: rgba(232, 201, 154, 0.9);
@@ -635,7 +636,7 @@ input[type=button] {
     }
     .kupon {
 
-        bottom: 390px;
+        bottom: 370px;
         font-size: 3vw;
         width: 70%;
         left: 50%;
@@ -690,7 +691,7 @@ input[type=button] {
     }
 
     .text5 {
-        top: 371px !important;
+        top: 400px !important;
         font-size: 3.4vw !important;
         width: 90% !important;
         margin: 0 0 0 -45% !important;
@@ -698,11 +699,11 @@ input[type=button] {
 
 
     .form {
-        top: 460px;
+        top: 480px;
     }
     .kupon {
 
-        bottom: 740px;
+        bottom: 680px;
         font-size: 3vw;
         width: 70%;
         left: 50%;
@@ -711,7 +712,7 @@ input[type=button] {
         box-sizing:border-box;
     }
     .desc {
-        bottom: 550px;
+        bottom: 490px;
         font-size: 3vw;
         width: 94%;
         left: 50%;
@@ -722,3 +723,8 @@ input[type=button] {
 
 
 }
+
+@media screen and (max-width: 360px) {
+.text5 {
+    top: 370px !important;
+}}

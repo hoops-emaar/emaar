@@ -184,7 +184,7 @@ input[type=button] {
 }
 
 .desc2 {position: absolute;
-    top: 210px;
+    top: 160px;
     right: 4%;
     color: #000;
     text-align: center;
@@ -223,7 +223,27 @@ input[type=button] {
         bottom: 30px;
     }
 }
+@media screen and  (max-height:800px) {
+    .title {
+        top: -80px;
+    }
+    .text1 {
+        top: 130px;
+        right: 8%;
+        font-size: 3vw;
+        width: 672px;
+    }
+    .info {
+        top: 350px;
 
+    }
+    .form {
+        bottom: 20px;
+    }
+
+
+
+}
 @media screen and (max-width:1440px) and (max-height:720px) {
     .title img {
         width: 470px;
@@ -364,8 +384,8 @@ input[type=button] {
 
     .titlemobile {
         display: block;
-        top: -50px;
-        right: 0;
+        top: -90px;
+        right: 4%;
     }
 
     .mobile {
@@ -385,13 +405,13 @@ input[type=button] {
     }
 
     .info {
-        top: 305px;
+        top: 775px;
         right: 0;
         width: 100%;
     }
 
     .text1 {
-        top: 416px;
+        top: 515px;
         right: 0;
         font-size: 7.4vw;
         width: 100%;
@@ -403,23 +423,29 @@ input[type=button] {
     }
 
     .form input.name,
-    .form input.surname,
     .form input.number,
-    .form input.gender,
     .form input.mail,
     .form select {
-        width: 100%;
-        float: none;
+        width: 48%;
+        float: left;
+        margin: 10px 0 0;
+    }
+    .form input.surname,
+    .form input.gender,
+    .form select {
+        width: 48%;
+        float: right;
         margin: 10px 0 0;
     }
 
     .form {
-        bottom: -150px;
+        bottom: 0px;
     }
 
     .kvkk {
         width: 100%;
-        float: none;
+        float: left;
+        margin: 0 0 10px;
     }
 
     .btn {
@@ -429,9 +455,11 @@ input[type=button] {
     }
 
     .logo {
-        position: absolute;
+        /*position: absolute;
         bottom: -26px;
         left: 0;
+        z-index: 9;*/
+        display:none;
     }
     .desc2 {
 
@@ -445,13 +473,23 @@ input[type=button] {
     }
     
 }
+@media screen and (max-width:767px) {
+    .form input[type=text],
+    .form select {
+       float:none;
+       width:100%;
+       margin:0 0 10px;
+    }
+    .form {top:360px;}
 
-@media screen and (max-width:375px) {
+
+}
+@media screen and (max-width:414px) {
 
 
 
     .form {
-        bottom: 170px;
+        bottom: 120px;
     }
     .desc2 {
 

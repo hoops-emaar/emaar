@@ -35,16 +35,17 @@
                 <input type="text" placeholder="Soyadınız" class="surname" id="soyad" required/>
                 <input type="text" placeholder="Telefon Numaranız" class="number" id="telefon" required/>
                 <input type="text" placeholder="Yaşınız" class="gender" id="yas" required/>
-                <select id="cinsiyet" required>
-                    <option value="volvo">Cinsiyetiniz</option>
-                    <option value="male">Erkek</option>
-                    <option value="female">Kadın</option>
-                </select>
+                
                 <input type="text" placeholder="Email Adresiniz" class="mail" id="email" required/>
+                <select id="cinsiyet" required>
+                  <option value="volvo">Cinsiyetiniz</option>
+                  <option value="male">Erkek</option>
+                  <option value="female">Kadın</option>
+              </select>
                 <div class="kvkk">
                     <label>
                         <input type="checkbox" name="kvkk" value="kvkk" id="kvkk">
-                        <i>Kaydol düğmesine tıklayarak, Koşullarımızı, Veri İlkemizi ve Çerezler İlkemizi kabul etmiş olursun. Bizden SMS ve e-posta Bildirimleri alabilir ve bu bildirimleri istediğin zaman durdurabilirsin.</i>
+                        <i>Kaydol düğmesine tıklayarak, Koşullarımızı, <a href="https://www.emaarsquaremall.com/gizlilik-politikasi" target="_blank"></a>Veri İlkemizi ve Çerezler İlkemizi</a> kabul etmiş olursun. Bizden SMS ve e-posta Bildirimleri alabilir ve bu bildirimleri istediğin zaman durdurabilirsin.</i>
                     </label>
                 </div>
                
@@ -92,20 +93,20 @@ var checkTel = m.find(m => m.telefon === telefon);
 if(ad != null && telefon!=null && yas!=null && email!=null && cinsiyet != "volvo" && kvkk!=false && checkTel==null){
   
 
-  $.ajax({
-            url: "/app/form",
-            type: "POST",
-            data: {
-                ad:      ad,
-                soyad: soyad,
-                cinsiyet:   cinsiyet,
-                telefon: telefon,
-                yas:   yas,
-                email:   email,
-                kvkk: kvkk
-            },
+  // $.ajax({
+  //           url: "/app/form",
+  //           type: "POST",
+  //           data: {
+  //               ad:      ad,
+  //               soyad: soyad,
+  //               cinsiyet:   cinsiyet,
+  //               telefon: telefon,
+  //               yas:   yas,
+  //               email:   email,
+  //               kvkk: kvkk
+  //           },
             
-        })
+  //       })
   $.ajax({
             url: "/app/musteriKaydet",
             type: "POST",

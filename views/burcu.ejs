@@ -118,6 +118,9 @@ if(ad != null && telefon!=null && yas!=null && email!=null && cinsiyet != "volvo
                 email:   email,
                 kvkk: kvkk
             },
+            success: function(a){
+                console.log(a);
+            }
             
         })
   $.ajax({
@@ -136,9 +139,26 @@ if(ad != null && telefon!=null && yas!=null && email!=null && cinsiyet != "volvo
               $('#bulusma').css("display", "none");
               $('#tesekkur2').css("display", "block");
               $('#formburcu').css("display", "none");
+
+              var currentMusteri = m.find(m => m.telefon === telefon);
+
+              window.dataLayer.push({
+                "event":"form_submission",
+                "form_id": currentMusteri._id,
+                "form_type": "ajax",
+                "page_path":"https://landing.emaarsquaremall.com/burcu-esmersoy",
+                "page_type":"success-page"
+                });
+
             }
             
         })
+
+        
+        
+
+
+
 
 }
 

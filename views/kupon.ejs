@@ -115,9 +115,7 @@ var telefon = $('#telefon').val();
 var yas = $('#yas').val();
 var email =   $('#email').val();
 
-if(telefon.length == 11 && telefon[0]=="0"){
-  telefon = telefon.substring(1);
-}
+
 
 $.get("/app/kuponlar", function(kuponlar){
     

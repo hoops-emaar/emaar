@@ -108,7 +108,7 @@ console.log(yas)
 console.log(email)
 console.log(kvkk)
 var checkTel = m.find(m => m.telefon === telefon);
-if(ad != null && telefon!=null && yas!=null && email!=null && cinsiyet != "volvo" && kvkk!=false && checkTel==null && telefon.length==10){
+if(ad != null && telefon!=null && yas!=null && email!=null && cinsiyet != "volvo" && kvkk!=false && checkTel==null && telefon.length==10 && telefon[0]!="0"){
   
 
   $.ajax({
@@ -173,7 +173,7 @@ else{
     console.log(checkTel)
     var a = confirm("Bu telefon numarasıyla daha önce bir kayıt yapılmış.");
   }
-  else if(telefon.length !=10){
+  else if(telefon.length != 10 || telefon[0]=="0"){
     var a = confirm("Lütfen telefon numaranızı başında 0 kullanmadan ve rakamlar arasında boşluk bırakmadan 10 haneli olacak şekilde giriniz.")
   }
  else if(kvkk==false){

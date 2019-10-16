@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css\styleVale.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-   
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 </head>
 
 <body>
@@ -52,8 +52,10 @@
       3 al 2 öde kampanyasının detayları için <a href="https://www.emaarsquaremall.com/istanbul-alisveris-firsatlari/emaar-da-bir-alirsin-iki-alirsin-ucuncude-kazanirsin">tıklayınız.</a>
     </div>
 
-        <div class="desc1" id="tesekkur" style="display: none;">İlginize teşekkürler. Etkinlik için rezervasyonumuz dolmuştur. <br>Bir sonraki etkinlikte görüşmek üzere.</div>
+        <div class="desc1" id="tesekkur" style="display: none;">İlginiz için teşekkürler. Kampanyamız 1.000 kullanım ile dolmuştur.<br>Bir sonraki kapmanyada görüşmek üzere.</div>
+        <div class="desc1" id="used" style="display: none;">Kampanyamız tek seferliktir. <br> Daha önceden kampanyamızdan yararlanmışsınız.</div>
         <div class="kupon"  style="display: none;" id="divKuponNo"><span id="kuponNo"></span></div>
+        <div id="kuponindir" class="kupon" style="display:none">Kupon kodunuzu pdf olarak kaydetmek için <a id="indir">tıklayın</a></div>
         <div class="form" id="formburcu">
             <form>
               <!-- <input type="text" placeholder="Adınız" class="name" id="ad" required/>
@@ -89,14 +91,31 @@
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
     
+
+    var isUsed = JSON.parse(localStorage.getItem("used")) || false;
+
+    
     
     $.get("/app/kuponMusteri", function(m){
       console.log(m.length)
-  if(m.length>=1)
+  if(m.length>=1000)
   {
     $('#bulusma').css("display", "none");
     $('#tesekkur').css("display", "block");
     $('#formburcu').css("display", "none");
+    $('#kuponindir').css("display", "none");
+    $('#txt1').css("display", "none");
+    $('#txt2').css("display", "none");
+    $('#txt3').css("display", "none");
+    $('#txt4').css("display", "none");
+    $('#txt5').css("display", "none");
+  }
+
+  if(isUsed == true){
+    console.log("askjdhkasfjagsdjlgakhdj")
+    $('#formburcu').css("display", "none");
+    $('#kuponindir').css("display", "none");
+    $('#used').css("display", "block");
     $('#txt1').css("display", "none");
     $('#txt2').css("display", "none");
     $('#txt3').css("display", "none");
@@ -114,70 +133,70 @@ gtag('js', new Date());
     else{
       kvkk = false
     }
-var ad =      $('#ad').val();
+/*var ad =      $('#ad').val();
 var soyad =      $('#soyad').val();
 var telefon = $('#telefon').val();
 var yas = $('#yas').val();
-var email =   $('#email').val();
+var email =   $('#email').val();*/
 
 
 
 $.get("/app/kuponlar", function(kuponlar){
     
   var kupon = kuponlar.filter(k => k.used === false);
-    console.log(kupon);
+    //console.log(kupon);
     
     var currentkupon = kupon[Math.floor(Math.random()*kupon.length)]
 
-var checkTel = m.find(m => m.telefon === telefon);
+//var checkTel = m.find(m => m.telefon === telefon);
 
 
-if(ad != null && telefon!=null && yas!=null && email!=null && cinsiyet != "volvo" && kvkk!=false && checkTel==null && telefon.length==10 && telefon[0]!="0"){
+//if(ad != null && telefon!=null && yas!=null && email!=null && cinsiyet != "volvo" && kvkk!=false && checkTel==null && telefon.length==10 && telefon[0]!="0"){
   
 
-      $.ajax({
-            url: "/app/formVale",
-            type: "POST",
-            data: {
-                ad:      ad,
-                soyad: soyad,
-                cinsiyet:   cinsiyet,
-                telefon: telefon,
-                yas:   yas,
-                email:   email,
-                kvkk: kvkk
-            },
-            success: function(err){
-              console.log(err);
-            },
-            async: false
-        })
-  $.ajax({
-            url: "/app/vale",
-            type: "POST",
-            data: {
-                ad:      ad,
-                soyad: soyad,
-                cinsiyet:   cinsiyet,
-                telefon: telefon,
-                yas:   yas,
-                email:   email,
-                kvkk: kvkk
-            },
+      // $.ajax({
+      //       url: "/app/formVale",
+      //       type: "POST",
+      //       data: {
+      //           ad:      ad,
+      //           soyad: soyad,
+      //           cinsiyet:   cinsiyet,
+      //           telefon: telefon,
+      //           yas:   yas,
+      //           email:   email,
+      //           kvkk: kvkk
+      //       },
+      //       success: function(err){
+      //         console.log(err);
+      //       },
+      //       async: false
+      //   })
+  // $.ajax({
+  //           url: "/app/vale",
+  //           type: "POST",
+  //           data: {
+  //               ad:      ad,
+  //               soyad: soyad,
+  //               cinsiyet:   cinsiyet,
+  //               telefon: telefon,
+  //               yas:   yas,
+  //               email:   email,
+  //               kvkk: kvkk
+  //           },
             
-        })
+  //       })
 
         
 
       $.get("/app/kuponMusteri", function(kpnMust){
-        var currentMusteri = kpnMust.find(k => k.telefon === telefon);
-        console.log(currentMusteri);
+        //var currentMusteri = kpnMust.find(k => k.telefon === telefon);
+        //console.log(currentMusteri);
         $.ajax({
             url: "/app/valeKupon",
             type: 'POST',
             data: {
                 kuponId: currentkupon._id,
-                musteriId: currentMusteri._id
+                //musteriId: currentMusteri._id
             },
             success: function(){
 
@@ -186,14 +205,16 @@ if(ad != null && telefon!=null && yas!=null && email!=null && cinsiyet != "volvo
               $('#formburcu').css("display", "none");
               $('#tsk1').css("display", "block");
               $('#divKuponNo').css("display", "block");
-              console.log(Object.keys(currentkupon));
+              //console.log(Object.keys(currentkupon));
               var vrbl = Object.keys(currentkupon)
               $('#kuponNo').html( "<div>" + "Tebrikler! Ücretsiz vale kazandınız! " + "</div>" + " Kupon kodunuz: "  + currentkupon['CodeName']);
-
+              $('#kuponindir').css("display", "block");
+              localStorage.setItem("used", true);
+              localStorage.setItem("kod", currentkupon['CodeName']);
               gtag('config', 'UA-135623189-1');
               window.dataLayer.push({
               "event":"form_submission",
-              "form_id": "currentMusteri._id",
+              "form_id": "currentkupon._id",
               "form_type": "ajax",
               "page_path":"https://landing.emaarsquaremall.com/turkcell-vale",
               "page_type":"success-page"
@@ -213,9 +234,9 @@ if(ad != null && telefon!=null && yas!=null && email!=null && cinsiyet != "volvo
 
        
 
-}
+//}
 
-else{
+/*else{
   if(checkTel!=null)
   {
    
@@ -232,11 +253,23 @@ else{
     var a = confirm("Formdaki tüm alanları eksiksiz ve doğru bir biçimde doldurmanız gerekmektedir.");
   }
   
-}
+}*/
 
    
 })
   
+})
+
+$('#indir').on("click", function(){
+  
+  var kod = localStorage.getItem("kod");
+
+  var  doc = new jsPDF("p", "mm", "a5");
+  doc.text(50, 50, kod);
+
+  doc.save("kupon.pdf")
+
+
 })
 
 

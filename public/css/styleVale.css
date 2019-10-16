@@ -17,6 +17,7 @@
     clear: both
 }
 input[type=button] {cursor: pointer;}
+a {cursor: pointer;}
 body {
     background: rgba(232, 201, 154, 0.9);
     font-family: 'Noto Serif', serif;

@@ -55,7 +55,7 @@
         <div class="desc1" id="tesekkur" style="display: none;">İlginiz için teşekkürler. Kampanyamız 1.000 kullanım ile dolmuştur.<br>Bir sonraki kapmanyada görüşmek üzere.</div>
         <div class="desc1" id="used" style="display: none;">Kampanyamız tek seferliktir. <br> Daha önceden kampanyamızdan yararlanmışsınız.</div>
         <div class="kupon"  style="display: none;" id="divKuponNo"><span id="kuponNo"></span></div>
-        <div id="kuponindir" class="kupon" style="display:none">Kupon kodunuzu pdf olarak kaydetmek için <a id="indir">tıklayın</a></div>
+        <div id="kuponindir" class="kupon-indir" style="display:none">Kupon kodunuzu pdf olarak kaydetmek için <a id="indir">tıklayın</a></div>
         <div class="form" id="formburcu">
             <form>
               <!-- <input type="text" placeholder="Adınız" class="name" id="ad" required/>
@@ -205,6 +205,11 @@ $.get("/app/kuponlar", function(kuponlar){
               $('#formburcu').css("display", "none");
               $('#tsk1').css("display", "block");
               $('#divKuponNo').css("display", "block");
+              $('#txt1').css("display", "none");
+    $('#txt2').css("display", "none");
+    $('#txt3').css("display", "none");
+    $('#txt4').css("display", "none");
+    $('#txt5').css("display", "none");
               //console.log(Object.keys(currentkupon));
               var vrbl = Object.keys(currentkupon)
               $('#kuponNo').html( "<div>" + "Tebrikler! Ücretsiz vale kazandınız! " + "</div>" + " Kupon kodunuz: "  + currentkupon['CodeName']);

@@ -12,7 +12,7 @@
 .right {
     float: right;
 }
-
+a#indir {text-decoration: underline; cursor: pointer;}
 .clear {
     clear: both
 }
@@ -109,13 +109,22 @@ select:not([multiple]) {
     padding: 0 0 0 20px;
 }
 
-.form {
+/* .form {
     position: absolute;
     width: 43vw;
     background: rgba(232, 201, 154, 0.9);
     right: 3%;
     bottom: 60px;
     padding: 1%;
+} */
+.form {
+    position: absolute;
+    width: 33vw;
+    background: rgba(232, 201, 154, 0.9);
+    right: 5%;
+    bottom: 5vw;
+    padding: 1%;
+    box-sizing: border-box;
 }
 
 input {
@@ -196,8 +205,8 @@ select option {
 }
 
 .btn {
-    float: right;
-    width: 48%;
+    float: none;
+    width: 100%;
 }
 
 input[type=button] {
@@ -227,38 +236,46 @@ input[type=button] {
     display: block;
     position: absolute;
     background: rgba(0,0,0, 0.75);
-    right: 8%;
-    bottom: 260px;
+    right: 50%;
+    left: 50%;
+    bottom: 15vw;
     color: #fff;
-    font-size:2vw;
-    text-align:center;
-    padding:10px 20px;
+    font-size: 1.5vw;
+    text-align: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    width: 36%;
+    margin: 0 0 0 -18%;
+}
+.kupon-indir {
+    display: block;
+    position: absolute;
+    background: rgba(0,0,0, 0.75);
+    right: 50%;
+    left: 50%;
+    bottom: 11vw;
+    color: #fff;
+    font-size: 1.2vw;
+    text-align: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    width: 42%;
+    margin: 0 0 0 -21%;
 }
 
 .desc {
     display: block;
     position: absolute;
     background: rgba(232, 201, 154, 0.9);
-    right: 1%;
-    bottom: 60px;
+    bottom: 1vw;
     color: #333332;
-    font-size:1vw;
-    text-align:left;
-    padding:10px 20px;
-
-}
-
-.desc {
-    display: block;
-    position: absolute;
-    background: rgba(232, 201, 154, 0.9);
-    right: 1%;
-    bottom: 60px;
-    color: #333332;
-    font-size:1vw;
-    text-align:left;
-    padding:10px 20px;
-
+    font-size: 1vw;
+    text-align: left;
+    width: 60%;
+    padding: 10px 20px;
+    left: 50%;
+    right: 50%;
+    margin: 0 0 0 -30%;
 }
 .desc1 {
     position: absolute;
@@ -405,7 +422,7 @@ input[type=button] {
 
 
 @media screen and (max-width:1024px) and (max-height:768px) {
-    .border {height: 172vh;}
+    .border {height: 148vh;}
     .web {
         display: none;
     }
@@ -457,7 +474,7 @@ input[type=button] {
     }
     .desc {
         bottom: 90px;
-        font-size: 3vw;
+        font-size: 2vw;
         width: 94%;
         left: 50%;
         right: 50%;
@@ -548,17 +565,24 @@ input[type=button] {
         margin: 20px 0 0;
     }
     .kupon {
-
-        bottom: 390px;
+        bottom: 65vw;
         font-size: 3vw;
         width: 70%;
         left: 50%;
         right: 50%;
         margin: 0 0 0 -35%;
     }
+    .kupon-indir {
+        bottom: 60vw;
+        font-size: 2vw;
+        width: 60%;
+        left: 50%;
+        right: 50%;
+        margin: 0 0 0 -30%;
+    }
     .desc {
-        bottom: -30px;
-        font-size: 3vw;
+        bottom: 346px;
+        font-size: 2vw;
         width: 94%;
         left: 50%;
         right: 50%;
@@ -584,6 +608,8 @@ input[type=button] {
 
 @media screen and (max-width:768px) {
 
+    .border {height:100vh;}
+
     .web,
     .onlytablet,
     .onlytablet1,
@@ -603,9 +629,6 @@ input[type=button] {
 
     .border {
         border: 10px solid #fff;
-        height: 100%;
-        overflow: visible;
-        min-height: 1240px;
     }
 
     .text1 {
@@ -697,18 +720,28 @@ input[type=button] {
         left: 0;
     }
     .kupon {
-
-        bottom: 370px;
+        bottom: auto;
+        font-size: 3.4vw;
+        width: 80%;
+        left: 50%;
+        right: 50%;
+        margin: 0 0 0 -40%;
+        box-sizing: border-box;
+        top: 50vw;
+    }
+    .kupon-indir {
+        bottom: auto;
         font-size: 3vw;
         width: 70%;
         left: 50%;
         right: 50%;
         margin: 0 0 0 -35%;
-        box-sizing:border-box;
+        box-sizing: border-box;
+        top: 69vw;
     }
     .desc {
-        bottom: 90px;
-        font-size: 3vw;
+        bottom: 60px;
+        font-size: 2.2vw;
         width: 94%;
         left: 50%;
         right: 50%;
@@ -748,10 +781,6 @@ input[type=button] {
 }
 @media screen and (max-width:414px) {
 
-    body {
-        background: #333332;
-    }
-
     .text1 {
         top: 200px;
     }
@@ -777,32 +806,25 @@ input[type=button] {
 
 
     .form {
-        top: 480px;
-    }
-    .kupon {
-
-        bottom: 680px;
-        font-size: 3vw;
-        width: 70%;
-        left: 50%;
-        right: 50%;
-        margin: 0 0 0 -35%;
-        box-sizing:border-box;
+        top: auto;
+        bottom: 20px!important;
     }
     .desc {
-        bottom: 490px;
-        font-size: 3vw;
-        width: 94%;
-        left: 50%;
-        right: 50%;
-        margin: 0 0 0 -47%;
-        box-sizing: border-box;
-    }
-
+    bottom: auto;
+    font-size: 3vw;
+    width: 94%;
+    left: 50%;
+    right: 50%;
+    margin: 0 0 0 -47%;
+    box-sizing: border-box;
+    top: 96vw;
+}
 
 }
 
 @media screen and (max-width: 360px) {
 .text5 {
     top: 370px !important;
-}}
+}
+
+}

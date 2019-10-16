@@ -259,6 +259,20 @@ input[type=button] {
     padding:10px 20px;
 
 }
+.desc1 {
+    position: absolute;
+    bottom: 5vw;
+    color: #fff;
+    text-align: center;
+    font-size: 1.6vw;
+    background: #000;
+    padding: 10px;
+    opacity: 0.8;
+    width: 84%;
+    left: 50%;
+    right: 50%;
+    margin: 0 0 0 -42%;
+}
 @media screen and (max-height:700px){
     .text5 {
         top: 30.5vw;
@@ -452,6 +466,21 @@ input[type=button] {
     .form input.gender, .form input.mail, .form select {
         margin: 10px 0 0!important;
     }
+    .desc1 {
+        position: absolute;
+        bottom: 46vw;
+        color: #fff;
+        right: 2vw;
+        text-align: center;
+        font-size: 1.6vw;
+        background: #000;
+        padding: 10px;
+        opacity: 0.8;
+        width: 84%;
+        left: 50%;
+        right: 50%;
+        margin: 0 0 0 -42%;
+    }
 }
 
 @media screen and (max-width:1024px) and (max-height:1366px) {
@@ -536,6 +565,22 @@ input[type=button] {
         margin: 0 0 0 -47%;
         box-sizing: border-box;
     }
+    .desc1 {
+        position: absolute;
+        bottom: 44vw;
+        color: #fff;
+        right: 2vw;
+        text-align: center;
+        font-size: 2vw;
+        background: #000;
+        padding: 10px;
+        opacity: 0.8;
+        width: 84%;
+        left: 50%;
+        right: 50%;
+        margin: 0 0 0 -42%;
+    }
+    
 }
 
 @media screen and (max-width:768px) {

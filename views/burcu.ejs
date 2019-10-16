@@ -38,7 +38,7 @@
                 konuşulmadık konu bırakmıyor.
             </span>
         </div>
-        <div class="info"><img src="/img/date.png" alt="" /> <img src="/img/loca.jpg" alt="" /></div>
+        <div class="info" id="info"><img src="/img/date.png" alt="" /> <img src="/img/loca.jpg" alt="" /></div>
         <div class="desc" id="tesekkur" style="display: none;" >İlginize teşekkürler. Etkinlik için rezerasyonumuz dolmuştur. <br>Bir sonraki etkinlikte görüşmek üzere.</div>
         <div class="desc2" id="tesekkur2" style="display: none;">Rezervasyonunuz alınmıştır,<br/> teşekkür ederiz<span>Rezervasyonunuz tek kişiliktir.</span></div>
 
@@ -76,11 +76,12 @@ gtag('js', new Date());
     
     $.get("/app/musteriler", function(m){
       console.log(m.length)
-  if(m.length>=150)
+  if(m.length>=1)
   {
     $('#bulusma').css("display", "none");
     $('#tesekkur').css("display", "block");
     $('#formburcu').css("display", "none");
+    $('#info').css("display", "none");
   }
  
 

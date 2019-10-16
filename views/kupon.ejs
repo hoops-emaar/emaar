@@ -52,11 +52,11 @@
       3 al 2 öde kampanyasının detayları için <a href="https://www.emaarsquaremall.com/istanbul-alisveris-firsatlari/emaar-da-bir-alirsin-iki-alirsin-ucuncude-kazanirsin">tıklayınız.</a>
     </div>
 
-        <div class="text1" id="tesekkur" style="display: none;">İlginize teşekkürler. Etkinlik için rezervasyonumuz dolmuştur. <br>Bir sonraki etkinlikte görüşmek üzere.</div>
+        <div class="desc1" id="tesekkur" style="display: none;">İlginize teşekkürler. Etkinlik için rezervasyonumuz dolmuştur. <br>Bir sonraki etkinlikte görüşmek üzere.</div>
         <div class="kupon"  style="display: none;" id="divKuponNo"><span id="kuponNo"></span></div>
         <div class="form" id="formburcu">
             <form>
-              <input type="text" placeholder="Adınız" class="name" id="ad" required/>
+              <!-- <input type="text" placeholder="Adınız" class="name" id="ad" required/>
               <input type="text" placeholder="Soyadınız" class="surname" id="soyad" required/>
               <input type="text" placeholder="Telefon Numaranız" class="number" id="telefon" required/>
               <input type="text" placeholder="Yaşınız" class="gender" id="yas" required/>
@@ -72,9 +72,9 @@
                         <input type="checkbox" name="kvkk" value="kvkk" id="kvkk">
                         <i>Kaydol düğmesine tıklayarak, Koşullarımızı, <a href="https://www.emaarsquaremall.com/gizlilik-politikasi" target="_blank">Veri İlkemizi ve Çerezler İlkemizi</a> kabul etmiş olursun. Bizden SMS ve e-posta Bildirimleri alabilir ve bu bildirimleri istediğin zaman durdurabilirsin.</i>
                     </label>
-                </div>
+                </div> -->
                
-                <div class="btn"><input type="button" value="Gönder" id="btn" /></div>
+                <div class="btn"><input type="button" value="FIRSATI KULLAN" id="btn" /></div>
                 <div class="clear"></div>
             </form>
         </div>
@@ -92,11 +92,16 @@ gtag('js', new Date());
     
     $.get("/app/kuponMusteri", function(m){
       console.log(m.length)
-  if(m.length>=1000)
+  if(m.length>=1)
   {
     $('#bulusma').css("display", "none");
-    $('#tesekkur').css("display", "css");
+    $('#tesekkur').css("display", "block");
     $('#formburcu').css("display", "none");
+    $('#txt1').css("display", "none");
+    $('#txt2').css("display", "none");
+    $('#txt3').css("display", "none");
+    $('#txt4').css("display", "none");
+    $('#txt5').css("display", "none");
   }
  
 

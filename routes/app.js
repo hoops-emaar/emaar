@@ -144,7 +144,7 @@ router.post("/vale", async (req, res) =>{
 router.post("/valeKupon", async (req, res)=>{
   const kupon = await kuponlar.findOneAndUpdate(
     {_id: req.body.kuponId},
-    {$set: {'used': true, 'owner': req.body.musteriId} },
+    {$set: {'used': true} },
     
     {new: true}
     );

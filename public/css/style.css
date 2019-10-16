@@ -23,6 +23,11 @@ body {
     font-family: 'Noto Serif', serif;
 
 }
+select:not([multiple]) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius:0;
+}
 
 .border {
     border: 30px solid #fff;

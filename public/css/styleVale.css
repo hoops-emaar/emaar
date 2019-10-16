@@ -21,6 +21,11 @@ body {
     background: rgba(232, 201, 154, 0.9);
     font-family: 'Noto Serif', serif;
 }
+select:not([multiple]) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius:0;
+}
 
 .border {
     border: 30px solid #fff;
@@ -43,7 +48,7 @@ body {
 
 .text1 {
     position: absolute;
-    top: 220px;
+    top: 11vw;
     left: 3%;
     color: #212120;
     text-align: center;
@@ -56,7 +61,7 @@ body {
 
 .text2 {
     position: absolute;
-    top: 305px;
+    top: 15.5vw;
     left: 3%;
     color: #212120;
     text-align: center;
@@ -69,7 +74,7 @@ body {
 
 .text3 {
     position: absolute;
-    top: 390px;
+    top: 20vw;
     left: 3%;
     color: #fff;
     text-align: center;
@@ -82,7 +87,7 @@ body {
 
 .text4 {
     position: absolute;
-    top: 487px;
+    top: 25.2vw;
     left: 3%;
     color: #fff;
     text-align: center;
@@ -94,20 +99,20 @@ body {
 
 .text5 {
     position: absolute;
-    top: 590px;
+    top: 31vw;
     left: 2%;
     color: #fff;
     text-align: left;
     font-size: 1.3vw;
-    width: 690px;
-    padding: 0 50px 0 20px;
+    width: 40vw;
+    padding: 0 0 0 20px;
 }
 
 .form {
     position: absolute;
-    width: 800px;
+    width: 43vw;
     background: rgba(232, 201, 154, 0.9);
-    right: 4%;
+    right: 3%;
     bottom: 60px;
     padding: 1%;
 }
@@ -254,7 +259,14 @@ input[type=button] {
     padding:10px 20px;
 
 }
-@media screen and  (max-height:800px) {
+@media screen and (max-height:700px){
+    .text5 {
+        top: 30.5vw;
+        left: 2%;
+    }
+}
+
+/*@media screen and  (max-height:800px) {
     .text1 {
         top: 190px;
         font-size: 2.6vw;
@@ -283,7 +295,7 @@ input[type=button] {
 
 }
 
-@media screen and (max-width:1440px) and (max-height:900px) {
+    @media screen and (max-width:1440px) and (max-height:900px) {
     .text1 {
         top: 190px;
     }
@@ -374,8 +386,11 @@ input[type=button] {
         bottom: 0;
     }
 }
+*/
+
 
 @media screen and (max-width:1024px) and (max-height:768px) {
+    .border {height: 172vh;}
     .web {
         display: none;
     }
@@ -411,10 +426,10 @@ input[type=button] {
 
 
     .form {
-        width: 600px;
+        width: 96%;
         right: 1%;
-        bottom: 0;
-        padding: 2% 1%;
+        bottom: 15vw!important;
+        padding: 2% 1%!important;
     }
     .kupon {
 
@@ -433,6 +448,9 @@ input[type=button] {
         right: 50%;
         margin: 0 0 0 -47%;
         box-sizing: border-box;
+    }
+    .form input.gender, .form input.mail, .form select {
+        margin: 10px 0 0!important;
     }
 }
 

@@ -471,7 +471,6 @@ input[type=button] {
         position: absolute;
         bottom: 46vw;
         color: #fff;
-        right: 2vw;
         text-align: center;
         font-size: 1.6vw;
         background: #000;
@@ -568,9 +567,8 @@ input[type=button] {
     }
     .desc1 {
         position: absolute;
-        bottom: 44vw;
+        bottom: 41vw;
         color: #fff;
-        right: 2vw;
         text-align: center;
         font-size: 2vw;
         background: #000;
@@ -729,6 +727,22 @@ input[type=button] {
        margin:0 0 10px;
     }
     .form {top:360px;}
+    .desc1 {
+        position: absolute;
+        bottom: auto!important;
+        color: #fff;
+        text-align: center;
+        font-size: 3.5vw;
+        background: #000;
+        padding: 10px;
+        opacity: 0.8;
+        width: 94%;
+        left: 50%;
+        right: 50%;
+        margin: 0 0 0 -47%;
+        top: 98vw!important;
+        box-sizing: border-box;
+    }
 
 
 }
